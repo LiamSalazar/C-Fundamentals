@@ -41,7 +41,7 @@ int main(){
 	(asistencias > 11) ? condiciones++ : (void)0;
 	(pagos > 9) ? printf("Pagos puntuales: SI\n") : printf("Pagos puntuales: NO\n");
 	(pagos > 9) ? condiciones++ : (void)0;
-    // Cuantas condiciones cumple
+    	// Cuantas condiciones cumple
 	(condiciones > 1) ? printf("Cuple al menos dos condiciones: SI\n") : printf("Cuple al menos dos condiciones: NO\n");
 	(condiciones < 1) ? printf("No cumple ninguna condicion: SI\n") : printf("No cumple ninguna condicion: NO\n");
 	
@@ -53,10 +53,11 @@ int main(){
 	
 	// Calculo de descuento
 	int descuento = 0;
-    int bandera = 0;
-    solicitudDescuento = !solicitudDescuento;
+    	int bandera = 0;
+    	solicitudDescuento = !solicitudDescuento;
 	(condiciones > 1 && solicitudDescuento > 0) ? descuento = 15 : bandera++;
-    descuento = ((condiciones > 1 || solicitudDescuento > 0) && bandera > 0) ? 5: 0;
+    	((condiciones < 2 && solicitudDescuento < 1) && bandera == 1) ? descuento = 0: bandera ++;
+    	(bandera == 2) ? descuento = 5: printf("Invalido");
 	printf("Descuento de: %d\n", descuento);
 	
 	return 0;
