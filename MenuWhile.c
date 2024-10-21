@@ -15,24 +15,30 @@ int main() {
         switch (opcion) {
             case 1:
                 printf("Numeros pares:\n");
-                for (int i = 2; i <= 100; i++) {
+                int i = 0;
+                while (i <= 100) {
                     if (i % 2 == 0) {
                         printf("%d\n", i);
                     }
+                    i++;
                 }
                 break;
             case 2:
                 printf("Numeros impares:\n");
-                for (int i = 0; i <= 100; i++) {
+                int i = 0;
+                while (i <= 100) {
                     if (i % 2 != 0) {
                         printf("%d\n", i);
                     }
+                    i++;
                 }
                 break;
             case 3:
                 int suma = 0;
-                for (int i = 0; i <= 100; i++) {
+                int i = 0;
+                while (i <= 100) {
                     suma += i;
+                    i++;
                 }
                 printf("Suma total: %d\n", suma);
                 break;
