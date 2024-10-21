@@ -8,44 +8,43 @@ int main() {
     int contador = 0;
     int contador2 = 0;
     
-    // Escribir palabra
-    puts("Escribe una frase:");
-    scanf(" %[^\n]", cadena); // Leer cadena completa incluyendo espacios
-    size_t longitud = strlen(cadena); // Calcular longitud de la cadena
+    // Escribir cadena (se solicita una sola vez)
+    puts("Escribe una cadena:");
+    scanf(" %[^\n]", cadena); // Leer la cadena completa incluyendo espacios
+    size_t longitud = strlen(cadena); // Calcular la longitud de la cadena
 
     while (opcion != 4) {
         // Menú
         printf("Seleccione una opcion:\n");
-        printf("1- Contar palabras\n");
-        printf("2- Mostrar cada palabra\n");
+        printf("1- Contar palabras (basado en espacios)\n");
+        printf("2- Mostrar cada palabra en una línea\n");
         printf("3- Contar vocales\n");
         printf("4- Salir\n");
         scanf("%d", &opcion);
 
         switch (opcion) {
-            case 1: // Contar palabras
-                contador = 0;
-                int en_palabra = 0; // Variable para saber si estamos dentro de una palabra
-                for (int i = 0; i < longitud; i++) {
-                    if (cadena[i] != ' ' && !en_palabra) {
-                        contador++;
-                        en_palabra = 1; // Estamos dentro de una palabra
-                    } else if (cadena[i] == ' ') {
-                        en_palabra = 0; // Salimos de la palabra
+            case 1: // Contar palabras basándose solo en los espacios
+                contador = 0; // Iniciar contador en 0
+                if (longitud > 0) {
+                    contador = 1; // Al menos hay una palabra si la longitud es mayor que 0
+                    for (int i = 0; i < longitud; i++) {
+                        if (cadena[i] == ' ' && cadena[i+1] != ' ' && cadena[i+1] != '\0') {
+                            contador++; // Aumenta el contador por cada espacio entre palabras
+                        }
                     }
                 }
-                printf("Cantidad de palabras: %d\n", contador);
+                printf("Cantidad de palabras (basado en espacios): %d\n", contador);
                 break;
 
-            case 2: // Mostrar cada palabra en una línea
+            case 2: // Mostrar cada palabra en una nueva línea
                 for (int i = 0; i < longitud; i++) {
                     if (cadena[i] != ' ') {
                         printf("%c", cadena[i]); // Imprime la letra
-                    } else if (i > 0 && cadena[i - 1] != ' ') {
-                        printf(" "); // Imprime un espacio entre palabras
+                    } else {
+                        printf("\n"); // Salto de línea cuando encuentra un espacio
                     }
                 }
-                printf("\n"); // Salto de línea después de imprimir todas las palabras
+                printf("\n"); // Salto de línea al final
                 break;
 
             case 3: // Contar vocales
