@@ -3,6 +3,7 @@
 int main() {
     // Variable de control
     int opcion = 0;
+	int i = 0, suma = 0;
     while (opcion != 4) {
         // Menú
         printf("Seleccione una opcion:\n");
@@ -14,8 +15,8 @@ int main() {
         // Procesos
         switch (opcion) {
             case 1:
+				i = 2;
                 printf("Numeros pares:\n");
-                int i = 0;
                 while (i <= 100) {
                     if (i % 2 == 0) {
                         printf("%d\n", i);
@@ -24,8 +25,8 @@ int main() {
                 }
                 break;
             case 2:
+				i = 1;
                 printf("Numeros impares:\n");
-                int i = 0;
                 while (i <= 100) {
                     if (i % 2 != 0) {
                         printf("%d\n", i);
@@ -34,8 +35,7 @@ int main() {
                 }
                 break;
             case 3:
-                int suma = 0;
-                int i = 0;
+				i = 0;
                 while (i <= 100) {
                     suma += i;
                     i++;
