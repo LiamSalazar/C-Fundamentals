@@ -37,16 +37,16 @@ int main(){
     puts("           ELECTRONICA | ROPA | ALIMENTOS");
     for(i=0;i<N;i++){
         if (i == 0){
-            printf("ALMACEN ");
+            printf("ALMACEN     ");
         }
         if (i == 1){
             printf("PISO VENTAS ");
         }
         if (i == 2){
-            printf("REPARACION ");
+            printf("REPARACION  ");
         }
         for(j=0;j<N;j++){
-            printf("%10d ",maiz[i][j]);
+            printf("%8d ",maiz[i][j]);
         }
         printf("\n");
     }
