@@ -26,3 +26,7 @@ int main() {
 // *p - Permite acceder a la variable referenciada, no al puntero en sí.
 // p - Accede directamente al puntero, es decir, modifica hacia qué apunta.
 // * para acceder a lo que apunta el puntero y p para acceder al valor del puntero.
+// *p devolverá el valor de la variable a la que apunta.
+// p si lo uso devuelve el valor de la memoria o indica una dirección.
+// Por eso en scanf uso p y no *p, porque scanf usa como argumento dónde guardara la variable  y no modifica directamente el valor.
+// Como ejemplo, con variables uso &variable, para acceder a su memoria, pero p es igual que &variable y si variable=1, *p=1.
